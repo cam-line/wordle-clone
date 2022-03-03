@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #16161a;
+    --highlight: #7f5af0;
+    --text: #94a1b2;
+    --error: #f25042;
+    --success: #2cb67d;
+    --neutral: #ff8906;
+} 
+
+html, body {
+    height: 100%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--background);
+    height: 100%;
+}
+
+header {
+    border-bottom: 1px solid var(--text);
+}
+
+.title {
+    color:var(--highlight);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.4rem 0;
+    text-align: center;
+}
+
+#board-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#game {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.square {
+    min-height: 60px;
+    min-width: 60px;
+    border: 2px solid var(--text);
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#keyboard-container {
+    height: 200px;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    touch-action: manipulation;
+    margin: 0 auto 8px;
+}
+
+.keyboard-row button {
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    height: 58px;
+    cursor: pointer;
+    background-color: var(--text);
+    flex-grow: 1;
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.keyboard-row button:active {
+    transform: scale(0.95);
+}
+
+.keyboard-row button.wide-button {
+    flex-grow: 1.5;
+    min-width: 90px;
+    background-color: var(--highlight);
+}
+
+.spacer-half {
+    flex-grow: 0.5;
+}
